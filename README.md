@@ -1,10 +1,19 @@
 # parrot.live
 
+![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/WillFantom/parrot.live/Docker%20Rolling/main?style=flat-square)
+
 An initiative, using frames from [`terminal-parrot`](https://github.com/jmhobbs/terminal-parrot), to allow any computer with `curl` to display an _animated_ party parrot.
 
 # Try it!
 ```bash
 curl parrot.live
+```
+
+# Host
+
+### Docker
+```bash
+docker run --rm -p 3000:3000 -e PARROT_REDIRECT=https://tinyurl.com/2fcpre6 willfantom/parrot.live
 ```
 
 # :partyparrot:
