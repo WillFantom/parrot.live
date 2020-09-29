@@ -71,6 +71,7 @@ const validateQuery = ({ flip }) => ({
   flip: String(flip).toLowerCase() === 'true'
 });
 
+const redirect_to = process.env.PARROT_REDIRECT || 'https://github.com/hugomd/parrot.live';
 const server = http.createServer((req, res) => {
   if (req.url === '/healthcheck') {
     res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -82,7 +83,7 @@ const server = http.createServer((req, res) => {
     req.headers['user-agent'] &&
     !req.headers['user-agent'].includes('curl')
   ) {
-    res.writeHead(302, { Location: 'https://github.com/hugomd/parrot.live' });
+    res.writeHead(302, { Location: redirect_to });
     return res.end();
   }
 
