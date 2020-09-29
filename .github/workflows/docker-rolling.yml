@@ -49,3 +49,8 @@ jobs:
             docker.io/${{ secrets.DOCKER_USERNAME }}/parrot.live:latest
             ghcr.io/${{ steps.extract_owner.outputs.owner }}/parrot.live:latest
           no-cache: false
+          labels: |
+            org.opencontainers.image.title=${{ github.event.repository.name }}
+            org.opencontainers.image.description=${{ github.event.repository.description }}
+            org.opencontainers.image.url=${{ github.event.repository.html_url }}
+            org.opencontainers.image.source=${{ github.event.repository.clone_url }}
